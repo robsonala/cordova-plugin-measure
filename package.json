@@ -1,7 +1,7 @@
 {
     "name": "cordova-plugin-measure",
     "version": "1.0.0",
-    "description": "",
+    "description": "Cordova plugin using ARKit(iOS) to calculate distance of real world objects",
     "cordova": {
       "id": "cordova-plugin-measure",
       "platforms": [
@@ -10,9 +10,12 @@
     },
       "keywords": [
         "ecosystem:cordova",
-        "cordova-ios"
+        "cordova-ios",
+        "arkit",
+        "ar",
+        "arcore"
       ],
-      "author": "Robson Alviani",
+      "author": "Robson Alviani <robsonala@gmail.com>",
       "license": "ISC"
    }
     

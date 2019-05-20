@@ -2,7 +2,7 @@
 
 Cordova plugin using ARKit(iOS) to calculate distance of real world objects
 
-iOS original measure project: https://github.com/levantAJ/Measure
+Swift original measure project: https://github.com/levantAJ/Measure
 
 ## Supported Platforms
 
