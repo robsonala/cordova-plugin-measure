@@ -1,0 +1,18 @@
+{
+    "name": "cordova-plugin-measure",
+    "version": "1.0.0",
+    "description": "",
+    "cordova": {
+      "id": "cordova-plugin-measure",
+      "platforms": [
+        "ios"
+      ]
+    },
+      "keywords": [
+        "ecosystem:cordova",
+        "cordova-ios"
+      ],
+      "author": "Robson Alviani",
+      "license": "ISC"
+   }
+    

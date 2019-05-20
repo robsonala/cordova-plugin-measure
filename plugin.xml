@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-measure" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-plugin-measure</name>
+    
+    <js-module name="cordova-plugin-measure" src="www/cordova-plugin-measure.js">
+        <clobbers target="cordova.plugins.measure"/>
+    </js-module>
+
+    <platform name="ios">
+        <preference name="CAMERA_USAGE_DESCRIPTION" default="Used by ARKit" />
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>$CAMERA_USAGE_DESCRIPTION</string>
+        </config-file>
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="MeasurePlugin">
+                <param name="ios-package" value="HWPMeasurePlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/MeasurePlugin.swift"/>
+        <source-file src="src/ios/MeasurePlugin+ViewControllerDelegate.swift"/>
+        <source-file src="src/ios/ARSCNView.swift"/>
+        <source-file src="src/ios/ViewController.swift"/>
+        <source-file src="src/ios/Line.swift"/>
+        <source-file src="src/ios/SCNVector3.swift"/>
+
+        <!-- Resources -->
+        <resource-file src="src/ios/Base.lproj/Main.storyboard" />
+        <resource-file src="src/ios/Assets.xcassets" />
+
+        <dependency id="cordova-plugin-add-swift-support" version="~2" />
+    </platform>
+</plugin>
