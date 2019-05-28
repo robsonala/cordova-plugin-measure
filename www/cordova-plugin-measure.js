@@ -4,14 +4,14 @@ var pluginName = 'MeasurePlugin';
 /**
  * Callback listener for Measure changes
  */
-exports.onMeasureUpdate = function (success, error) {
+exports.onMeasureUpdate = function (success = function(){}, error = function(){}) {
     exec(success, error, pluginName, 'setMeasureListener');
 };
 
 /**
  * Callback when the view is dismissed
  */
-exports.onFinish = function (success, error) {
+exports.onFinish = function (success = function(){}, error = function(){}) {
     exec(success, error, pluginName, 'setFinishListener');
 };
 

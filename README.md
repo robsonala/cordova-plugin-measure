@@ -6,7 +6,7 @@ Swift original measure project: https://github.com/levantAJ/Measure
 
 ## Supported Platforms
 
-- iOS
+- iOS (Requires ARKit support iOS 11.3+)
 
 ## Installation
     cordova plugin add https://github.com/robsonala/cordova-plugin-measure
@@ -40,9 +40,9 @@ cordova.plugins.measure.start({allowMultiplePoints: true});
 Set listener for event from measures
 
 ```js
-cordova.plugins.arkit.onMeasureUpdate((data) => {});
+cordova.plugins.measure.onMeasureUpdate((data) => {});
 
-// Example: {"data": "10.00cm"}
+// Example: data = {"10.00cm"}
 ```
 
 ----
@@ -52,16 +52,16 @@ cordova.plugins.arkit.onMeasureUpdate((data) => {});
 Set listener when the view is dismissed
 
 ```js
-cordova.plugins.arkit.onFinish((data) => {});
+cordova.plugins.measure.onFinish((data) => {});
 
 /*
 Examples:
 
 IF allowMultiplePoints == FALSE:
-["10.00cm"]
+data = "10.00cm"
 
 IF allowMultiplePoints == TRUE:
-["10.00cm", "20.14cm", ...]
+data = ["10.00cm", "20.14cm", ...]
 */
 ```
 

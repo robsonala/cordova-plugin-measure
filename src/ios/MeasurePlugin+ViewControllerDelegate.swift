@@ -6,18 +6,22 @@ extension MeasurePlugin: ViewControllerDelegate {
 
     func closeView() {
         let data = myViewController.getMeasures();
-
+        var result: CDVPluginResult
+        if (!allowMultiple() && data.count > 0) {
+            result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: data[0])
+        } else {
+            result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: data)
+        }
+        
         myViewController.view.removeFromSuperview()
         self.myViewController = nil
-
-        guard let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: data) else { return }
+        
         result.setKeepCallbackAs(true)
         commandDelegate!.send(result, callbackId: finishListenerCallbackId)
     }
 
     func onUpdateMeasure(nodeName: String) {
-        let data = ["data": nodeName];
-        guard let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: data) else { return }
+        guard let result = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: nodeName) else { return }
         result.setKeepCallbackAs(true)
         commandDelegate!.send(result, callbackId: measureListenerCallbackId)
     }
