@@ -1,15 +1,17 @@
 # cordova-plugin-measure
 
-Cordova plugin using ARKit(iOS) to calculate distance of real world objects
+Cordova plugin using ARKit(iOS) and ARCore(Android) to calculate distance of real world objects
 
-Swift original measure project: https://github.com/levantAJ/Measure
+Swift(iOS) original measure project: https://github.com/levantAJ/Measure
+Kotlin(Android) original measure project: https://github.com/Terran-Marine/ARCoreMeasuredDistance
 
 ## Supported Platforms
 
 - iOS (Requires ARKit support iOS 11.3+)
+- Android (See devices supported: https://developers.google.com/ar/discover/supported-devices)
 
 ## Installation
-    cordova plugin add https://github.com/robsonala/cordova-plugin-measure
+    cordova plugin add cordova-plugin-measure
 
 ## Methods
 - cordova.plugins.measure.start
@@ -66,4 +68,4 @@ data = ["10.00cm", "20.14cm", ...]
 ```
 
 ## TODO
-Android support
+FIX `allowMultiplePoints` on Android, It's always FALSE at the moment
